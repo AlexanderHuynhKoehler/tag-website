@@ -1,0 +1,458 @@
+/* 
+==============================================
+CONSOLIDATED CSS FOR TALENT ACCELERATION GROUP
+Change colors in the :root section below to update entire site
+==============================================
+*/
+
+/* 
+------------------
+MAIN COLOR CONTROL - EDIT THIS SECTION TO CHANGE ALL COLORS
+------------------
+*/
+:root {
+  /* PRIMARY COLORS - Used for headers, navigation, buttons, footer */
+    --primary: #30af50d8;           /* Charcoal gray */
+    --primary-dark: #2a2a2a;      /* Darker charcoal */
+    --primary-rgb: 58, 58, 58;    /* RGB for charcoal */
+  
+  /* SECONDARY COLORS - Used for section backgrounds */
+  --secondary: #2a2a2aec;         /* Warm sage green */
+  --secondary-light: #613030;   /* Lighter version of secondary */
+  
+  /* TEXT COLORS */
+  --dark-text: #212529;         /* Main text color */
+  --light-text: #7faa93;        /* Muted text color */
+  --white: #ffffff;             /* White text */
+  
+  /* ACCENT COLORS */
+  --accent-green: #7cb342;      /* For hover states and highlights */
+  --success-green: #2ecc71;     /* For success messages */
+  
+  /* BACKGROUND COLORS */
+  --bg-light: #0d6ac700;          /* Light backgrounds */
+  --bg-white: #ffffff;          /* Pure white backgrounds */
+}
+
+/* 
+------------------
+NAVIGATION STYLES
+------------------
+*/
+#mainNav {
+  background-color: var(--bg-white) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  transition: background-color 0.2s ease;
+}
+
+#mainNav .navbar-brand {
+  color: var(--dark-text) !important;
+  font-weight: 700;
+}
+
+#mainNav .navbar-brand:hover {
+  color: var(--accent-green) !important;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: var(--dark-text) !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.75rem 0;
+  margin: 0 0.75rem;
+  transition: color 0.3s ease;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link:active,
+#mainNav .navbar-nav .nav-item .nav-link.active {
+  color: var(--accent-green) !important;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-green);
+  margin-top: 2px;
+}
+
+/* 
+------------------
+HEADER/MASTHEAD STYLES
+------------------
+*/
+.masthead {
+  background: linear-gradient(to bottom, rgba(var(--primary-rgb), 0.8) 0%, rgba(var(--primary-rgb), 0.8) 100%), url('../assets/img/masthead.jpg') !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  background-size: cover !important;
+}
+
+.bio-header {
+  position: relative;
+  padding-top: calc(10rem + 72px);
+  padding-bottom: 6rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/img/IMG_0988.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+/* 
+------------------
+SECTION STYLES
+------------------
+*/
+
+
+
+.inner-content-box {
+    background-color: var(--secondary);
+    border-radius: 8px;
+    padding: 2rem 2.5rem;  /* Slightly more horizontal padding */
+    margin-top: 1rem;
+}
+
+.inner-content-box p {
+    color: var(--light-text) !important;
+    margin-bottom: 1rem;
+    text-align: justify;  /* Makes text spread evenly across the full width */
+    line-height: 1.6;     /* Improves readability */
+}
+.page-section {
+  padding: 8rem 0;
+}
+
+/* Primary sections (dark background, white text) */
+.bg-primary,
+section.bg-primary,
+section#about.page-section.bg-primary,
+#clients.page-section {
+  background-color: var(--secondary) !important;
+  color: var(--white) !important;
+}
+
+/* Secondary sections (sage green background) */
+.bg-warm,
+#services.page-section.bg-warm,
+#testimonials.page-section,
+#engagements.page-section {
+  background-color: var(--secondary) !important;
+  color: var(--dark-text) !important;
+}
+
+/* Light sections */
+.bg-light,
+#founder.page-section.bg-light {
+  background-color: var(--bg-light) !important;
+}
+
+/* 
+------------------
+TEXT COLORS
+------------------
+*/
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-white {
+  color: var(--white) !important;
+}
+
+.text-muted {
+  color: var(--light-text) !important;
+}
+
+/* 
+------------------
+BUTTON STYLES
+------------------
+*/
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+  color: var(--white) !important;
+}
+
+.btn-light {
+  background-color: var(--white) !important;
+  border-color: var(--white) !important;
+  color: var(--primary) !important;
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+  background-color: var(--secondary-light) !important;
+  border-color: var(--secondary-light) !important;
+  color: var(--primary) !important;
+}
+
+/* 
+------------------
+DIVIDER STYLES
+------------------
+*/
+.divider {
+  height: 0.2rem;
+  max-width: 3.25rem;
+  margin: 1.5rem auto;
+  background-color: var(--primary) !important;
+  opacity: 1;
+  border: none;
+}
+
+.divider-light {
+  background-color: var(--white) !important;
+}
+
+.divider-primary {
+  background-color: var(--primary) !important;
+}
+
+.divider-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card .divider-light {
+  background-color: var(--primary) !important;
+  opacity: 0.2;
+}
+
+/* 
+------------------
+ICON STYLES
+------------------
+*/
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+}
+
+.feature-icon.bg-primary,
+.feature-icon.bg-primary.bg-gradient {
+  background-color: var(--primary) !important;
+  background-image: linear-gradient(rgba(255,255,255,0.15),rgba(255,255,255,0)) !important;
+  color: var(--white) !important;
+}
+
+.interest-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.bi-check-circle-fill.text-primary,
+.bi-arrow-right-circle.text-primary,
+.bi-plus-circle.text-primary,
+.bi-dot.text-primary {
+  color: var(--primary) !important;
+}
+
+.client-icon {
+  color: var(--primary);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+/* 
+------------------
+CARD STYLES
+------------------
+*/
+.hover-elevate-up {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-elevate-up:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.client-card,
+.education-card,
+.expertise-item {
+  background-color: var(--bg-white);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+  padding: 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.client-card:hover,
+.education-card:hover,
+.expertise-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+}
+
+/* 
+------------------
+FORM STYLES
+------------------
+*/
+.form-control:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--primary-rgb), 0.25) !important;
+}
+
+/* 
+------------------
+BADGE STYLES
+------------------
+*/
+.badge.bg-primary {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+/* 
+------------------
+TESTIMONIAL STYLES
+------------------
+*/
+.testimonial-content {
+  position: relative;
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  padding-bottom: 20px;
+}
+
+.testimonial-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-content {
+  max-height: 1000px;
+}
+
+.testimonial-card:hover .testimonial-gradient {
+  opacity: 0;
+}
+
+.read-more-indicator {
+  position: absolute;
+  bottom: -5px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: var(--primary) !important;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  background-color: var(--bg-white);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.testimonial-card:hover .read-more-indicator {
+  opacity: 0;
+}
+
+/* 
+------------------
+BIOGRAPHY STYLES
+------------------
+*/
+.bio-section {
+  background-color: var(--primary);
+}
+
+.expertise-section {
+  background-color: var(--dark-text;
+}
+
+.bio-image {
+  border-radius: 50%;
+  max-width: 350px;
+  box-shadow: 0 1rem 3rem rgba(99, 95, 95, 0.175);
+  border: 3px solid var(--white);
+}
+
+.section-title {
+  font-weight: 800;
+  margin-bottom: 2rem;
+  position: relative;
+  color: var(--dark-text);
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 50px;
+  height: 4px;
+  background-color: var(--primary);
+}
+
+.interests-section {
+  background-color: var(--bg-white);
+}
+
+/* 
+------------------
+FOOTER STYLES
+------------------
+*/
+footer.enhanced-footer {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 5rem 0;
+}
+
+footer.enhanced-footer .divider-light {
+  height: 0.2rem;
+  max-width: 3.25rem;
+  margin: 1.5rem 0;
+  background-color: var(--white);
+  opacity: 0.5;
+}
+
+footer a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--accent-green);
+}
+
+/* 
+------------------
+UTILITY OVERRIDES
+------------------
+*/
+/* Override any hardcoded colors that might slip through */
+[style*="#f25c43"], 
+[style*="f25c43"],
+[style*="#2c3e50"] {
+  color: var(--primary) !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}

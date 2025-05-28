@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Client testimonials for Talent Acceleration Group" />
+  <title>Clients & Testimonials | Talent Acceleration Group</title>
+
+  <!-- Favicon  & Fonts -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/custom_css.css" rel="stylesheet" />
+
+  <style>
+    /* Sleek hero section using CSS variables */
+    .hero-section {
+      padding: 6rem 0 4rem 0;
+      background: var(--secondary);
+      margin-top: 72px;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-title {
+      font-weight: 300;
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--light-text);
+      font-weight: 400;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+    
+    .hero-description {
+      font-size: 1rem;
+      color: var(--light-text);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    
+    .hero-accent {
+      width: 60px;
+      height: 3px;
+      background: var(--accent-green);
+      margin: 0 auto 2rem auto;
+      border-radius: 2px;
+    }
+    
+    .content-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #f0f0f0;
+    }
+    
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .engagement-card {
+      background: var(--secondary);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+    }
+    
+    .engagement-card:hover {
+      transform: translateY(-20px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+    }
+    
+    .engagement-card h5 {
+      color: var(--primary);
+    }
+    
+    .engagement-card p {
+      color: var(--light-text);
+    }
+    
+    .client-category {
+      background: var(--secondary);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #e9ecef;
+    }
+    
+    .client-category h5 {
+      color: var(--primary);
+    }
+    
+    .testimonial-card-wrapper {
+      background: var(--secondary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border: 1px solid #f0f0f0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .testimonial-card-wrapper:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    
+    .testimonial-card-wrapper h5 {
+      color: var(--primary);
+    }
+    
+    .testimonial-card-wrapper .text-muted,
+    .testimonial-card-wrapper small {
+      color: var(--light-text) !important;
+    }
+    
+    .testimonial-card-wrapper .fst-italic {
+      color: var(--light-text) !important;
+    }
+    
+    .section-title {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+  
+    .client-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .client-list li {
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: center;
+      color: var(--light-text);
+    }
+    
+    .client-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .client-list li i {
+      color: var(--accent-green);
+      margin-right: 0.5rem;
+    }
+    
+    /* Remove default section padding */
+    .page-section {
+      padding: 0;
+    }
+    
+    /* Text colors using CSS variables */
+    .text-muted {
+      color: var(--light-text) !important;
+    }
+    
+    /* Fixed testimonial expansion - individual card hover only */
+    .testimonial-content {
+      position: relative;
+      max-height: 4.5em; /* Use em units for consistent line-based cutoff */
+      overflow: hidden;
+      transition: max-height 0.6s ease;
+      padding-bottom: 20px;
+      line-height: 1.5em;
+    }
+
+    .testimonial-gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      background: linear-gradient(to bottom, rgba(42,42,42,0), rgba(42,42,42,1));
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Only expand the specific card being hovered */
+    .testimonial-card-wrapper:hover .testimonial-content {
+      max-height: 50em;
+    }
+
+    .testimonial-card-wrapper:hover .testimonial-gradient {
+      opacity: 0;
+    }
+
+    /* Remove h-100 class effect to prevent stretching */
+    .testimonial-card-wrapper.h-100 {
+      height: auto !important;
+    }
+    
+    .badge.bg-primary {
+      background-color: var(--primary) !important;
+      color: var(--white) !important;
+    }
+    
+    /* Button styling using CSS variables */
+    .btn-primary {
+      background-color: var(--primary) !important;
+      border-color: var(--primary) !important;
+      color: var(--white) !important;
+    }
+    
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
+      background-color: var(--primary-dark) !important;
+      border-color: var(--primary-dark) !important;
+      color: var(--white) !important;
+    }
+    
+    body {
+        background-color: var(--secondary) !important;
+    }
+    
+    .feature-icon {
+      background-color: var(--primary) !important;
+      color: var(--white) !important;
+    }
+    
+    /* Filter styling */
+    .form-select {
+      background-color: var(--bg-white);
+      border: 1px solid #e9ecef;
+      color: var(--dark-text);
+    }
+    
+    .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.25rem rgba(48, 175, 80, 0.25);
+    }
+  </style>
+</head>
+
+<body id="page-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="index.html">Talent Acceleration Group</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="testimonials.html">Clients & Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container px-4 px-lg-5">
+      <div class="hero-content text-center">
+        <h1 class="hero-title">Our Clients & Impact</h1>
+        <div class="hero-accent"></div>
+        <p class="hero-subtitle">Partnering with organizations across industries to unlock leadership potential& drive transformative results</p>
+        <p class="hero-description">From small startups to Fortune 500 companies, we deliver measurable impact in biotech/pharma, finance, healthcare, retail, technology, & nonprofit sectors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container px-4 px-lg-5">
+    
+    <!-- Typical Engagements Card -->
+    <div class="content-card">
+      <h3 class="section-title">Typical Engagements</h3>
+      <p class="text-muted mb-4">Our work spans individual coaching, team development, & organizational transformation:</p>
+      
+      <div class="engagement-grid">
+        <div class="engagement-card">
+          <h5 class="fw-bold mb-2">Executive Coaching</h5>
+          <p class="small mb-0">1:1 & group coaching for senior leaders</p>
+        </div>
+        
+        <div class="engagement-card">
+          <h5 class="fw-bold mb-2">Leadership Profiles</h5>
+          <p class="small mb-0">Bespoke leadership models & 360 feedback tools</p>
+        </div>
+        
+        <div class="engagement-card">
+          <h5 class="fw-bold mb-2">Team Acceleration</h5>
+          <p class="small mb-0">Team effectiveness workshops & coaching</p>
+        </div>
+        
+        <div class="engagement-card">
+          <h5 class="fw-bold mb-2">Executive Assessment</h5>
+          <p class="small mb-0">Assessment for selection, development, or promotion</p>
+        </div>
+        
+        <div class="engagement-card">
+          <h5 class="fw-bold mb-2">Talent Strategy</h5>
+          <p class="small mb-0">Workforce planning, talent review & succession planning</p>
+        </div>
+        
+        <div class="engagement-card">
+          <h5 class="fw-bold mb-2">Psychological Safety</h5>
+          <p class="small mb-0">Team & organization assessment & workshops</p>
+        </div>
+        
+        <div class="engagement-card">
+          <h5 class="fw-bold mb-2">Coaching Programs</h5>
+          <p class="small mb-0">Data-centric, action-oriented coaching programs</p>
+        </div>
+        
+        <div class="engagement-card">
+          <h5 class="fw-bold mb-2">Leadership Development</h5>
+          <p class="small mb-0">Workshops, coaching & action learning</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Organizations Card -->
+    <div class="content-card">
+      <h3 class="section-title">Organizations We've Partnered With</h3>
+      <p class="text-muted mb-4">Our clients span multiple industries, sizes, & missions</p>
+      
+      <div class="row">
+        <div class="col-lg-4 mb-3">
+          <div class="client-category">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-staff-snake text-primary me-3" style="font-size: 2rem;"></i>
+              <h5 class="fw-bold mb-0">Pharma/Biotech & Healthcare</h5>
+            </div>
+            <ul class="client-list">
+              <li><i class="bi bi-dot"></i> Aegerion Pharmaceuticals</li>
+              <li><i class="bi bi-dot"></i> InVentiv Health</li>
+              <li><i class="bi bi-dot"></i> Lahey Health</li>
+              <li><i class="bi bi-dot"></i> Merck</li>
+              <li><i class="bi bi-dot"></i> Merrimack Pharmaceuticals</li>
+              <li><i class="bi bi-dot"></i> Moderna</li>
+              <li><i class="bi bi-dot"></i> Takeda Pharmaceuticals</li>
+              <li><i class="bi bi-dot"></i> Ironwood Pharmaceuticals</li>
+              <li><i class="bi bi-dot"></i> Sarepta Therapeutics</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-3">
+          <div class="client-category">
+            <div class="d-flex align-items-center mb-3">
+              <i class="bi bi-bank text-primary me-3" style="font-size: 2rem;"></i>
+              <h5 class="fw-bold mb-0">Financial Services & Commerical Sectors</h5>
+            </div>
+            <ul class="client-list">
+              <li><i class="bi bi-dot"></i> Fidelity Investments</li>
+              <li><i class="bi bi-dot"></i> BlackRock</li>
+              <li><i class="bi bi-dot"></i> Best Buy</li>
+              <li><i class="bi bi-dot"></i> CVS/Caremark</li>
+              <li><i class="bi bi-dot"></i> Delaware North</li>
+              <li><i class="bi bi-dot"></i> Federated Department Stores</li>
+              <li><i class="bi bi-dot"></i> P&G / Gillette</li>
+              <li><i class="bi bi-dot"></i> Marmaxx</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-3">
+          <div class="client-category">
+            <div class="d-flex align-items-center mb-3">
+              <i class="bi bi-mortarboard-fill text-primary me-3" style="font-size: 2rem;"></i>
+              <h5 class="fw-bold mb-0">Education & Technology</h5>
+            </div>
+            <ul class="client-list">
+              <li><i class="bi bi-dot"></i> Harvard Business School</li>
+              <li><i class="bi bi-dot"></i> Harvard Business School Publishing</li>
+              <li><i class="bi bi-dot"></i> Simmons Executive Education</li>
+              <li><i class="bi bi-dot"></i> Forrester Research</li>
+              <li><i class="bi bi-dot"></i> American Institutes for Research</li>
+              <li><i class="bi bi-dot"></i> Greater Boston Chamber of Commerce</li>
+              <li><i class="bi bi-dot"></i> New England Aquarium</li>
+              <li><i class="bi bi-dot"></i> WGBH</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="content-card">
+      <div class="text-center mb-4">
+        <h3 class="section-title">Client Testimonials</h3>
+        <p class="text-muted mb-4">What industry leaders say about our impact</p>
+
+        <div class="text-center mb-4">
+          <select id="industryFilter" class="form-select w-auto mx-auto shadow rounded-pill px-4 border-0">
+            <option value="all">All Industries</option>
+            <option value="pharma-biotech">Pharmaceuticals / Biotech</option>
+            <option value="tech">Technology</option>
+            <option value="finance">Financial Services</option>
+            <option value="retail">Retail</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row gx-4 gx-lg-5 gy-4" id="testimonialContainer">
+        <!-- Pharmaceuticals / Biotech -->
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="pharma-biotech">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-staff-snake" style="font-size: 1.2rem;"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Steve Schaefer</h5>
+                <small class="text-muted">President, Kyowa Kirin North America</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Pharmaceuticals / Biotech</span>
+            
+            <!-- Testimonial content with hover-expand functionality -->
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">"Jeni was a phenomenal HR BP for my business unit. The business unit was a multi-billion dollar business with close to a 1000 employees. Her background in psychology, combined with her significant HR experience enable exceptional talent development, work force planning and performance management strategies. I am extremely grateful to JENI's contributions supporting me as the business unit leader, and her coaching and insight was always first class. We went through a significant organization change during our work together. Jeni led our change management efforts and also brought to bear helpful effective teaming tools that we leveraged both on the senior team as well as deeper in the business unit, all of which accelerated the strategic impact of our work."</p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="pharma-biotech">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-staff-snake" style="font-size: 1.2rem;"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Leo Barella</h5>
+                <small class="text-muted">Chief Technology Officer, Takeda</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Pharmaceuticals / Biotech</span>
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">"I've had the pleasure of working closely with Jeni and can confidently say she brings exceptional value as a trusted partner. Her ability to offer clear, actionable coaching has made her an invaluable resource to both individuals and teams navigating complex change. Jeni stands out not just for what she does—but how she does it: with clarity, empathy, and a sharp instinct for what's needed in the moment.  Her communication and facilitation skills are top-tier—whether leading a workshop, steering a strategic conversation, or guiding leadership alignment, she delivers with polish, purpose, and precision. What I admire most is her innovative mindset toward talent practices. She challenges legacy thinking in thoughtful, pragmatic ways that create measurable impact on culture, engagement, and performance. I always walk away from a conversation with Jeni sharper than when I entered it.  She's one of those rare people who blends strategic thinking, people-centered insight, and operational follow-through—making her a powerful force for transformation."</p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="pharma-biotech">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-staff-snake" style="font-size: 1.2rem;"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Jonathan Rosin</h5>
+                <small class="text-muted">Head of HR, Ironwood Pharmaceuticals</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Pharmaceuticals / Biotech</span>
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">"I have worked closely with Jeni for 5 years. She brings deep experience and expertise to her craft as a practitioner and designer in the leadership development space as well as broader experience in talent management, including executive onboarding and integration and succession management. She is masterful in her work with executive and senior leaders where her expertise covers assessment, targeted development and coaching. Jeni's approach has always been pragmatic, relevant and targeted to the individual and organization's needs. Her work is results-focused, action-oriented and innovative. Jeni is passionate about her work, about having an impact and making a difference. She is highly collaborative, thrives at leading teams to build and implement solutions in the talent management and leadership development space, and has fun while she is doing this work. Not only is she committed to the development of her clients, but she is also committed to developing her colleagues and herself - her passion for excellence and making everyone around her better every day is infectious."
+              </p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="pharma-biotech">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-staff-snake" style="font-size: 1.2rem;"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Jennifer Tice</h5>
+                <small class="text-muted">VP Global Learning, inVentiv Health</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Pharmaceuticals / Biotech</span>
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">""We hired Jennifer to help with one of our emerging executives and she did amazing work - not just with him but with his manager and whole team. There was a marked difference in that function and the executive was promoted! She was a pleasure to work with and was an excellent coach.""</p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="retail">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-shop" style="font-size: 1.2rem;"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Judy Ingalls</h5>
+                <small class="text-muted">Director of Executive Development at Staples Corporation</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Retail</span>
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">"I have known and worked with Jeni for many years, in her capacity as organizational consultant and executive development expert and practitioner.  Jeni is passionate, thoughtful, and unusually skillful, leveraging a subtle mix of research, influence and analysis in her work with groups and individuals.  When corporate clients ask me for a list of highly effective consultants and executive coaches from which to draw, I find it difficult to create one unless I have unflagging confidence in the names that I share.  Jeni is on that short list, without question."</p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="pharma-biotech">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-staff-snake" style="font-size: 1.2rem;"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Erika Nicol</h5>
+                <small class="text-muted">Director of HR, Merrimack Pharmaceuticals</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Pharmaceuticals / Biotech</span>
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">"Jeni worked with one of our Vice Presidents providing comprehensive development coaching. This was her first time working with our company and she made a point of learning Merrimack's culture, people processes, and business context. What impressed me the most however was Jeni's approach to working with me as the HR Business Partner. She frequently checked-in with me to ensure that our two efforts were aligned with the coachee and evolving business needs. During our conversations Jeni always maintained confidentiality for the coachee while also fully engaging me in the development process. Shortly after the coaching engagement was completed the Vice President Jeni worked with was selected for a larger role within Merrimack. I attribute a portion of the Vice President's success to the effective coaching she received from Jeni!"</p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technology -->
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="tech">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; font-size: 1.5rem;">
+                <i class="bi bi-cpu"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Simon Zelazo</h5>
+                <small class="text-muted">President, Tech Transformations</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Technology</span>
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">"Jeni has consistently provided some of the most insightful career advice I've experienced. Her thoughtful perspective during critical junctures in my life path have resulted in pragmatic solutions to challenging decisions. Her approach is personal, direct, and emotionally cognizant in ways that have positively molded my career. I've often thought back to our conversations during key moments and have found her advice to be prescient in so many ways, from leadership to mentorship to interpersonal relationships, and strongly recommend her expertise."</p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="tech">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; font-size: 1.5rem;">
+                <i class="bi bi-laptop"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Guy Staff</h5>
+                <small class="text-muted">Leadership Development, Forrester Research</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Technology</span>
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">"Results are what separate Jeni Harnden-Koehler from the rest of the pack. Of course, she is credentialed, experienced, smart, and humanistic, but what stands out for me is how she resolves different viewpoints and needs in the C-suite to get things done. I saw her build tools, relationships, and success where others failed. Now that you have found Jeni, call her to discuss your challenge. You will be glad you did."</p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Financial Services -->
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="finance">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; font-size: 1.5rem;">
+                <i class="bi bi-cash-stack"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Larry Kaye</h5>
+                <small class="text-muted">Global Head of Leadership, BlackRock</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Financial Services</span>
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">"I have known and worked closely with Jeni for several years. She brings a wealth of experience and know how in both leadership development and talent management. She has the ability to set strategic direction through credible thought leadership, partner collaboratively with other subject matter experts and consult to leaders regarding key transition, development and performance issues. Not only is she deep in areas like individual leadership assessment, she is also capable of catalyzing culture change at the organizational level."</p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retail -->
+        <div class="col-lg-4 col-md-6 testimonial-card" data-industry="retail">
+          <div class="testimonial-card-wrapper">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon bg-primary text-white rounded-circle me-3" style="width: 3rem; height: 3rem; font-size: 1.5rem;">
+                <i class="bi bi-shop"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Kelly James Cannon</h5>
+                <small class="text-muted">AVP Executive Development, Marmaxx</small>
+              </div>
+            </div>
+            <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Retail</span>
+            <div class="testimonial-content mt-3 position-relative">
+              <p class="fst-italic">"When organizations struggle to identify and develop leaders, they need proven experience and expertise to develop solutions that integrate with their values and systems.  Having worked alongside Jeni Harnden-Koehler for several years, I can state unequivocally that she is one of the most gifted talent development professionals with whom I have worked.  Her inquisitive, open style enables her to generate novel solutions that expand beyond working assumptions.  This creativity is also balanced by a pragmatic, no-nonsense approach that resonates with leaders and organizations.  I have observed firsthand her amazing acumen in translating feedback results into actionable, real-world development plans that really advance individuals' capabilities.  Jeni is also skilled in helping organizations develop integrated practices that move learning from an 'event' to a 'process' – into the day-to-day business of the organization.  Most importantly, Jeni's personal and professional integrity are the foundations of her success, and a key reason I value and respect her as a colleague.  I recommend organizations and individuals engage Jeni when they need a fresh perspective and proven results in their talent practices."</p>
+              <div class="testimonial-gradient"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5 mb-4">
+      <div class="content-card text-center">
+        <h4 class="fw-bold mb-3 text-primary">Ready to Transform Your Organization?</h4>
+        <p class="text-muted mb-4">Let's discuss how we can help you unlock your team's leadership potential</p>
+        <a class="btn btn-primary btn-lg rounded-pill px-5" href="index.html#contact">Get in Touch</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer style="background-color: var(--secondary); color: var(--white); padding: 4rem 0 2rem 0;">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h4 class="fw-bold mb-3" style="color: var(--white);">Talent Acceleration Group</h4>
+          <div style="width: 50px; height: 3px; background-color: var(--accent-green); margin-bottom: 1.5rem; border-radius: 2px;"></div>
+          <p style="color: rgba(255,255,255,0.9); line-height: 1.6;">Empowering leaders & organizations to achieve their full potential through strategic talent development.</p>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h4 class="fw-bold mb-3" style="color: var(--white);">Connect</h4>
+          <div style="width: 50px; height: 3px; background-color: var(--accent-green); margin-bottom: 1.5rem; border-radius: 2px;"></div>
+          <p style="color: rgba(255,255,255,0.9); margin-bottom: 0.5rem;"><i class="bi bi-geo-alt-fill me-2" style="color: var(--accent-green);"></i> Boston Area, MA</p>
+          <p style="color: rgba(255,255,255,0.9); margin-bottom: 0.5rem;"><i class="bi bi-envelope-fill me-2" style="color: var(--accent-green);"></i> Jeni@TalentAccelerationGroup.com</p>
+          <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;"><i class="bi bi-telephone-fill me-2" style="color: var(--accent-green);"></i> +1 (617)-596-1405</p>
+          <div>
+            <img src="assets/img/TAGLOGO.jpg" alt="Talent Acceleration Group Logo" class="img-fluid" style="max-width: 180px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="fw-bold mb-3" style="color: var(--white);">Explore</h4>
+          <div style="width: 50px; height: 3px; background-color: var(--accent-green); margin-bottom: 1.5rem; border-radius: 2px;"></div>
+          <p style="margin-bottom: 0.5rem;"><a href="index.html" style="color: rgba(255,255,255,0.9); text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-green)'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">Home</a></p>
+          <p style="margin-bottom: 0.5rem;"><a href="index.html#about" style="color: rgba(255,255,255,0.9); text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-green)'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">About</a></p>
+          <p style="margin-bottom: 0.5rem;"><a href="index.html#services" style="color: rgba(255,255,255,0.9); text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-green)'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">Services</a></p>
+          <p style="margin-bottom: 0.5rem;"><a href="testimonials.html" style="color: rgba(255,255,255,0.9); text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-green)'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">Clients & Testimonials</a></p>
+          <p style="margin-bottom: 0.5rem;"><a href="index.html#contact" style="color: rgba(255,255,255,0.9); text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-green)'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">Contact</a></p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.2); margin-top: 3rem; padding-top: 2rem;">
+        <div class="row gx-4 gx-lg-5">
+          <div class="col-lg-12 text-center">
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.7); font-size: 0.9rem;">© 2025 Talent Acceleration Group. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+
+  <script>
+    // Original industry filter functionality
+    document.addEventListener("DOMContentLoaded", function () {
+      const filter = document.getElementById("industryFilter");
+      if (filter) {
+        const cards = document.querySelectorAll(".testimonial-card");
+
+        function updateTestimonials() {
+          const selected = filter.value;
+
+          cards.forEach(card => {
+            const industry = card.getAttribute("data-industry");
+            const shouldShow = selected === "all" || industry === selected;
+
+            card.style.display = shouldShow ? "block" : "none";
+          });
+        }
+
+        filter.addEventListener("change", updateTestimonials);
+        updateTestimonials(); // Run on page load
+      }
+    });
+  </script>
+</body>
+</html>
