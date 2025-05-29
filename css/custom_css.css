@@ -17,8 +17,8 @@ MAIN COLOR CONTROL - EDIT THIS SECTION TO CHANGE ALL COLORS
   --primary-rgb: 58, 58, 58;     /* RGB for primary */
   
   /* SECONDARY COLORS - Used for section backgrounds */
-  --secondary: #333333;           /* Dark background */
-  --secondary-light: #111111e0;  /* Lighter version of secondary */
+  --secondary: #283022;           /* Dark background */
+  --secondary-light: #161616e0;  /* Lighter version of secondary */
   
   /* TEXT COLORS */
   --dark-text: #212529;          /* Main text color */
@@ -349,15 +349,7 @@ BIOGRAPHY STYLES
   color: var(--dark-text);
 }
 
-.section-title:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -15px;
-  width: 50px;
-  height: 4px;
-  background-color: var(--primary);
-}
+
 
 .interests-section {
   background-color: var(--bg-white);
