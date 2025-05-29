@@ -338,18 +338,11 @@ Dr. Jeni Harnden-Koehler is a Harvard-trained psychologist and the Founder of Ta
             
             // Form submission success message function
             function showSuccessMessage(event) {
-                event.preventDefault();
                 const form = event.target;
                 const successMsg = document.getElementById('formSuccess');
-                
-                // In a real implementation, you'd submit the form data via AJAX here
-                // and show the success message only after confirmation
-                
-                // For demo purposes, just show the success message
                 successMsg.classList.remove('d-none');
                 form.reset();
                 
-                // Scroll to success message
                 successMsg.scrollIntoView({ behavior: 'smooth' });
                 
                 // Hide message after 5 seconds
