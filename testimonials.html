@@ -18,243 +18,250 @@
   <link href="css/custom_css.css" rel="stylesheet" />
 
   <style>
-    /* Sleek hero section using CSS variables */
-    .hero-section {
-      padding: 6rem 0 4rem 0;
-      background: var(--secondary);
-      margin-top: 72px;
-    }
-    
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .hero-title {
-      font-weight: 300;
-      font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.25rem;
-      color: var(--light-text);
-      font-weight: 400;
-      margin-bottom: 2rem;
-      line-height: 1.5;
-    }
-    
-    .hero-description {
-      font-size: 1rem;
-      color: var(--light-text);
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
-    
-    .hero-accent {
-      width: 60px;
-      height: 3px;
-      background: var(--accent-green);
-      margin: 0 auto 2rem auto;
-      border-radius: 2px;
-    }
-    
-    .content-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border: 1px solid #f0f0f0;
-    }
-    
-    .engagement-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    
-    .engagement-card {
-      background: var(--secondary);
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-align: center;
-    }
-    
-    .engagement-card:hover {
-      transform: translateY(-20px);
-      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-    }
-    
-    .engagement-card h5 {
-      color: var(--primary);
-    }
-    
-    .engagement-card p {
-      color: var(--light-text);
-    }
-    
-    .client-category {
-      background: var(--secondary);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #e9ecef;
-    }
-    
-    .client-category h5 {
-      color: var(--primary);
-    }
-    
-    .testimonial-card-wrapper {
-      background: var(--secondary);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      border: 1px solid #f0f0f0;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    
-    .testimonial-card-wrapper:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    }
-    
-    .testimonial-card-wrapper h5 {
-      color: var(--primary);
-    }
-    
-    .testimonial-card-wrapper .text-muted,
-    .testimonial-card-wrapper small {
-      color: var(--light-text) !important;
-    }
-    
-    .testimonial-card-wrapper .fst-italic {
-      color: var(--light-text) !important;
-    }
-    
-    .section-title {
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      position: relative;
-      display: inline-block;
-    }
-    
-  
-    .client-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .client-list li {
-      padding: 0.3rem 0;
-      display: flex;
-      align-items: center;
-      color: var(--light-text);
-    }
-    
-    .client-list li:last-child {
-      border-bottom: none;
-    }
-    
-    .client-list li i {
-      color: var(--accent-green);
-      margin-right: 0.5rem;
-    }
-    
-    /* Remove default section padding */
-    .page-section {
-      padding: 0;
-    }
-    
-    /* Text colors using CSS variables */
-    .text-muted {
-      color: var(--light-text) !important;
-    }
-    
-    /* Fixed testimonial expansion - individual card hover only */
-    .testimonial-content {
-      position: relative;
-      max-height: 4.5em; /* Use em units for consistent line-based cutoff */
-      overflow: hidden;
-      transition: max-height 0.6s ease;
-      padding-bottom: 20px;
-      line-height: 1.5em;
-    }
+/* 
+==============================================
+CLEAN TESTIMONIALS CSS - SIMPLIFIED
+==============================================
+*/
 
-    .testimonial-gradient {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 30px;
-      background: linear-gradient(to bottom, rgba(42,42,42,0), rgba(42,42,42,1));
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
+/* Hero Section */
+.hero-section {
+  padding: 6rem 0 4rem 0;
+  background: var(--secondary);
+  margin-top: 72px;
+}
 
-    /* Only expand the specific card being hovered */
-    .testimonial-card-wrapper:hover .testimonial-content {
-      max-height: 50em;
-    }
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    .testimonial-card-wrapper:hover .testimonial-gradient {
-      opacity: 0;
-    }
+.hero-title {
+  font-weight: 300;
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
 
-    /* Remove h-100 class effect to prevent stretching */
-    .testimonial-card-wrapper.h-100 {
-      height: auto !important;
-    }
-    
-    .badge.bg-primary {
-      background-color: var(--primary) !important;
-      color: var(--white) !important;
-    }
-    
-    /* Button styling using CSS variables */
-    .btn-primary {
-      background-color: var(--primary) !important;
-      border-color: var(--primary) !important;
-      color: var(--white) !important;
-    }
-    
-    .btn-primary:hover,
-    .btn-primary:focus,
-    .btn-primary:active {
-      background-color: var(--primary-dark) !important;
-      border-color: var(--primary-dark) !important;
-      color: var(--white) !important;
-    }
-    
-    body {
-        background-color: var(--secondary) !important;
-    }
-    
-    .feature-icon {
-      background-color: var(--primary) !important;
-      color: var(--white) !important;
-    }
-    
-    /* Filter styling */
-    .form-select {
-      background-color: var(--bg-white);
-      border: 1px solid #e9ecef;
-      color: var(--dark-text);
-    }
-    
-    .form-select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 0.25rem rgba(48, 175, 80, 0.25);
-    }
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--light-text);
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: var(--light-text);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.hero-accent {
+  width: 60px;
+  height: 3px;
+  background: var(--accent-green);
+  margin: 0 auto 2rem auto;
+  border-radius: 2px;
+}
+
+/* Main Content Cards */
+.content-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #f0f0f0;
+}
+
+/* Section Titles */
+.section-title {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-green);
+  border-radius: 2px;
+}
+
+/* Engagement Cards Grid */
+.engagement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.engagement-card {
+  background: var(--secondary-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.engagement-card:hover {
+  transform: translateY(-5px);
+}
+
+.engagement-card h5 {
+  color: var(--primary);
+}
+
+.engagement-card p {
+  color: var(--light-text);
+}
+
+/* Client Category Boxes */
+.client-category {
+  background: var(--secondary-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.client-category h5 {
+  color: var(--primary);
+}
+
+/* Client Lists */
+.client-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.client-list li {
+  padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
+  color: var(--light-text);
+}
+
+.client-list li i {
+  color: var(--accent-green);
+  margin-right: 0.5rem;
+}
+
+/* Testimonial Cards */
+.testimonial-card-wrapper {
+  background: var(--secondary-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.testimonial-card-wrapper:hover {
+  transform: translateY(-3px);
+}
+
+.testimonial-card-wrapper h5 {
+  color: var(--primary);
+}
+
+.testimonial-card-wrapper .text-muted,
+.testimonial-card-wrapper small {
+  color: var(--light-text) !important;
+}
+
+.testimonial-card-wrapper .fst-italic {
+  color: var(--light-text) !important;
+}
+
+/* Feature Icons */
+.feature-icon {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+/* Testimonial Content Expansion */
+.testimonial-content {
+  position: relative;
+  max-height: 4.5em;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  padding-bottom: 20px;
+  line-height: 1.5em;
+}
+
+.testimonial-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(37,37,37,0), rgba(37,37,37,1));
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-card-wrapper:hover .testimonial-content {
+  max-height: 80em;
+}
+
+.testimonial-card-wrapper:hover .testimonial-gradient {
+  opacity: 0;
+}
+
+/* Form Select */
+.form-select {
+  background-color: var(--bg-white);
+  border: 1px solid #e9ecef;
+  color: var(--dark-text);
+}
+
+.form-select:focus {
+  border-color: var(--primary);
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+  color: var(--white) !important;
+}
+
+/* Badge Styling */
+.badge.bg-primary {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+/* Text Colors */
+.text-muted {
+  color: var(--light-text) !important;
+}
+
+/* Background */
+body {
+  background-color: var(--secondary) !important;
+}
+
+/* Remove default section padding */
+.page-section {
+  padding: 0;
+}
   </style>
 </head>
 
@@ -284,7 +291,7 @@
         <h1 class="hero-title">Our Clients & Impact</h1>
         <div class="hero-accent"></div>
         <p class="hero-subtitle">Partnering with organizations across industries to unlock leadership potential& drive transformative results</p>
-        <p class="hero-description">From small startups to Fortune 500 companies, we deliver measurable impact in biotech/pharma, finance, healthcare, retail, technology, & nonprofit sectors.</p>
+        <p class="hero-description">From small startups to Fortune 500 companies, we deliver measurable impact in biotech/pharma, finance, healthcare, retail, Technology, nonprofits, and other industry sectors.</p>
       </div>
     </div>
   </section>
@@ -295,7 +302,7 @@
     <!-- Typical Engagements Card -->
     <div class="content-card">
       <h3 class="section-title">Typical Engagements</h3>
-      <p class="text-muted mb-4">Our work spans individual coaching, team development, & organizational transformation:</p>
+      <p class="text-dark mb-4">Our work spans individual coaching, team development, & organizational transformation:</p>
       
       <div class="engagement-grid">
         <div class="engagement-card">
@@ -343,7 +350,7 @@
     <!-- Client Organizations Card -->
     <div class="content-card">
       <h3 class="section-title">Organizations We've Partnered With</h3>
-      <p class="text-muted mb-4">Our clients span multiple industries, sizes, & missions</p>
+      <p class="text-dark mb-4">Our clients span multiple industries, sizes, & missions.</p>
       
       <div class="row">
         <div class="col-lg-4 mb-3">
@@ -410,10 +417,10 @@
     <div class="content-card">
       <div class="text-center mb-4">
         <h3 class="section-title">Client Testimonials</h3>
-        <p class="text-muted mb-4">What industry leaders say about our impact</p>
+        <p class="text-dark mb-4">What industry leaders say about our impact</p>
 
         <div class="text-center mb-4">
-          <select id="industryFilter" class="form-select w-auto mx-auto shadow rounded-pill px-4 border-0">
+        <select id="industryFilter" class="form-select w-auto mx-auto rounded-pill px-4 border-0">
             <option value="all">All Industries</option>
             <option value="pharma-biotech">Pharmaceuticals / Biotech</option>
             <option value="tech">Technology</option>
@@ -536,7 +543,9 @@
             </div>
             <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Pharmaceuticals / Biotech</span>
             <div class="testimonial-content mt-3 position-relative">
-              <p class="fst-italic">"Jeni worked with one of our Vice Presidents providing comprehensive development coaching. This was her first time working with our company and she made a point of learning Merrimack's culture, people processes, and business context. What impressed me the most however was Jeni's approach to working with me as the HR Business Partner. She frequently checked-in with me to ensure that our two efforts were aligned with the coachee and evolving business needs. During our conversations Jeni always maintained confidentiality for the coachee while also fully engaging me in the development process. Shortly after the coaching engagement was completed the Vice President Jeni worked with was selected for a larger role within Merrimack. I attribute a portion of the Vice President's success to the effective coaching she received from Jeni!"</p>
+              <p class="fst-italic">"Jeni worked with one of our Vice Presidents providing comprehensive development coaching. This was her first time working with our company and she made a point of learning Merrimack's culture, people processes, and business context. What impressed me the most however was Jeni's approach to working with me as the HR Business Partner. She frequently checked-in with me to ensure that our two efforts were aligned with the coachee and evolving business needs. During our conversations Jeni always maintained confidentiality for the coachee while also fully engaging me in the development process. Shortly after the coaching engagement was completed the Vice President Jeni worked with was selected for a larger role within Merrimack. I attribute a portion of the Vice President's success to the effective coaching she received from Jeni!"
+
+</p>
               <div class="testimonial-gradient"></div>
             </div>
           </div>
@@ -615,7 +624,7 @@
             </div>
             <span class="badge bg-primary rounded-pill px-3 py-2 mb-2">Retail</span>
             <div class="testimonial-content mt-3 position-relative">
-              <p class="fst-italic">"When organizations struggle to identify and develop leaders, they need proven experience and expertise to develop solutions that integrate with their values and systems.  Having worked alongside Jeni Harnden-Koehler for several years, I can state unequivocally that she is one of the most gifted talent development professionals with whom I have worked.  Her inquisitive, open style enables her to generate novel solutions that expand beyond working assumptions.  This creativity is also balanced by a pragmatic, no-nonsense approach that resonates with leaders and organizations.  I have observed firsthand her amazing acumen in translating feedback results into actionable, real-world development plans that really advance individuals' capabilities.  Jeni is also skilled in helping organizations develop integrated practices that move learning from an 'event' to a 'process' – into the day-to-day business of the organization.  Most importantly, Jeni's personal and professional integrity are the foundations of her success, and a key reason I value and respect her as a colleague.  I recommend organizations and individuals engage Jeni when they need a fresh perspective and proven results in their talent practices."</p>
+              <p class="fst-italic">"When organizations struggle to identify and develop leaders, they need proven experience and expertise to develop solutions that integrate with their values and systems.  Having worked alongside Jeni Harnden-Koehler for several years, I can state unequivocally that she is one of the most gifted talent development professionals with whom I have worked.  Her inquisitive, open style enables her to generate novel solutions that expand beyond working assumptions.  This creativity is also balanced by a pragmatic, no-nonsense approach that resonates with leaders and organizations.  I have observed firsthand her amazing acumen in translating feedback results into actionable, real-world development plans that really advance individuals’ capabilities.  Jeni is also skilled in helping organizations develop integrated practices that move learning from an ‘event’ to a ‘process’ – into the day-to-day business of the organization.  Most importantly, Jeni’s personal and professional integrity are the foundations of her success, and a key reason I value and respect her as a colleague.  I recommend organizations and individuals engage Jeni when they need a fresh perspective and proven results in their talent practices."</p>
               <div class="testimonial-gradient"></div>
             </div>
           </div>
@@ -651,7 +660,7 @@
           <p style="color: rgba(255,255,255,0.9); margin-bottom: 0.5rem;"><i class="bi bi-envelope-fill me-2" style="color: var(--accent-green);"></i> Jeni@TalentAccelerationGroup.com</p>
           <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;"><i class="bi bi-telephone-fill me-2" style="color: var(--accent-green);"></i> +1 (617)-596-1405</p>
           <div>
-            <img src="assets/img/TAGLOGO.jpg" alt="Talent Acceleration Group Logo" class="img-fluid" style="max-width: 180px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+            <img src="assets/img/TAGLOGO.jpg" alt="Talent Acceleration Group Logo" class="img-fluid" style="max-width: 300px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
           </div>
         </div>
         <div class="col-lg-4">
