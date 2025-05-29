@@ -1,6 +1,6 @@
 /* 
 ==============================================
-CONSOLIDATED CSS FOR TALENT ACCELERATION GROUP
+CLEAN CONSOLIDATED CSS FOR TALENT ACCELERATION GROUP
 Change colors in the :root section below to update entire site
 ==============================================
 */
@@ -12,26 +12,26 @@ MAIN COLOR CONTROL - EDIT THIS SECTION TO CHANGE ALL COLORS
 */
 :root {
   /* PRIMARY COLORS - Used for headers, navigation, buttons, footer */
-    --primary: #30af50d8;           /* Charcoal gray */
-    --primary-dark: #2a2a2a;      /* Darker charcoal */
-    --primary-rgb: 58, 58, 58;    /* RGB for charcoal */
+  --primary: #30af50d8;           /* Primary green */
+  --primary-dark: #2a2a2a;       /* Darker version */
+  --primary-rgb: 58, 58, 58;     /* RGB for primary */
   
   /* SECONDARY COLORS - Used for section backgrounds */
-  --secondary: #2a2a2aec;         /* Warm sage green */
-  --secondary-light: #613030;   /* Lighter version of secondary */
+  --secondary: #333333;           /* Dark background */
+  --secondary-light: #111111e0;  /* Lighter version of secondary */
   
   /* TEXT COLORS */
-  --dark-text: #212529;         /* Main text color */
-  --light-text: #7faa93;        /* Muted text color */
-  --white: #ffffff;             /* White text */
+  --dark-text: #212529;          /* Main text color */
+  --light-text: #30af50d8;       /* Muted text color */
+  --white: #ffffff;              /* White text */
   
   /* ACCENT COLORS */
-  --accent-green: #7cb342;      /* For hover states and highlights */
-  --success-green: #2ecc71;     /* For success messages */
+  --accent-green: #7cb342;       /* For hover states and highlights */
+  --success-green: #2ecc71;      /* For success messages */
   
   /* BACKGROUND COLORS */
-  --bg-light: #0d6ac700;          /* Light backgrounds */
-  --bg-white: #ffffff;          /* Pure white backgrounds */
+  --bg-light: #0d6ac700;         /* Light backgrounds */
+  --bg-white: #ffffff;           /* Pure white backgrounds */
 }
 
 /* 
@@ -84,7 +84,7 @@ HEADER/MASTHEAD STYLES
 ------------------
 */
 .masthead {
-  background: linear-gradient(to bottom, rgba(var(--primary-rgb), 0.8) 0%, rgba(var(--primary-rgb), 0.8) 100%), url('../assets/img/masthead.jpg') !important;
+  background: linear-gradient(to bottom, rgba(var(--primary-rgb), 0.6) 0%, rgba(var(--primary-rgb), 0.8) 100%), url('../assets/img/masthead.jpg') !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-attachment: scroll !important;
@@ -104,25 +104,9 @@ HEADER/MASTHEAD STYLES
 
 /* 
 ------------------
-SECTION STYLES
+CONTENT SECTIONS
 ------------------
 */
-
-
-
-.inner-content-box {
-    background-color: var(--secondary);
-    border-radius: 8px;
-    padding: 2rem 2.5rem;  /* Slightly more horizontal padding */
-    margin-top: 1rem;
-}
-
-.inner-content-box p {
-    color: var(--light-text) !important;
-    margin-bottom: 1rem;
-    text-align: justify;  /* Makes text spread evenly across the full width */
-    line-height: 1.6;     /* Improves readability */
-}
 .page-section {
   padding: 8rem 0;
 }
@@ -136,7 +120,7 @@ section#about.page-section.bg-primary,
   color: var(--white) !important;
 }
 
-/* Secondary sections (sage green background) */
+/* Secondary sections (background color) */
 .bg-warm,
 #services.page-section.bg-warm,
 #testimonials.page-section,
@@ -149,6 +133,21 @@ section#about.page-section.bg-primary,
 .bg-light,
 #founder.page-section.bg-light {
   background-color: var(--bg-light) !important;
+}
+
+/* Biography content box */
+.inner-content-box {
+  background-color: var(--secondary);
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  margin-top: 1rem;
+}
+
+.inner-content-box p {
+  color: var(--light-text) !important;
+  margin-bottom: 1rem;
+  text-align: justify;
+  line-height: 1.6;
 }
 
 /* 
@@ -274,34 +273,33 @@ ICON STYLES
 
 /* 
 ------------------
-CARD STYLES
+CARD STYLES (NO SHADOWS)
 ------------------
 */
 .hover-elevate-up {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .hover-elevate-up:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
+/* Clean card styles without shadows */
 .client-card,
 .education-card,
 .expertise-item {
   background-color: var(--bg-white);
   border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
   padding: 1.5rem;
   height: 100%;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
+  border: 1px solid #f0f0f0;
 }
 
 .client-card:hover,
 .education-card:hover,
 .expertise-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
 }
 
 /* 
@@ -326,56 +324,6 @@ BADGE STYLES
 
 /* 
 ------------------
-TESTIMONIAL STYLES
-------------------
-*/
-.testimonial-content {
-  position: relative;
-  max-height: 100px;
-  overflow: hidden;
-  transition: max-height 0.6s ease;
-  padding-bottom: 20px;
-}
-
-.testimonial-gradient {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.testimonial-card:hover .testimonial-content {
-  max-height: 1000px;
-}
-
-.testimonial-card:hover .testimonial-gradient {
-  opacity: 0;
-}
-
-.read-more-indicator {
-  position: absolute;
-  bottom: -5px;
-  right: 10px;
-  font-size: 0.8rem;
-  color: var(--primary) !important;
-  font-weight: bold;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  background-color: var(--bg-white);
-  padding: 2px 8px;
-  border-radius: 10px;
-}
-
-.testimonial-card:hover .read-more-indicator {
-  opacity: 0;
-}
-
-/* 
-------------------
 BIOGRAPHY STYLES
 ------------------
 */
@@ -384,7 +332,7 @@ BIOGRAPHY STYLES
 }
 
 .expertise-section {
-  background-color: var(--dark-text;
+  background-color: var(--dark-text);
 }
 
 .bio-image {
@@ -455,4 +403,14 @@ UTILITY OVERRIDES
   color: var(--primary) !important;
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
+}
+
+.engagement-card,
+.engagement-card:hover,
+.client-category,
+.testimonial-card-wrapper,
+.testimonial-card-wrapper:hover,
+.content-card,
+.form-select {
+  box-shadow: none !important;
 }
