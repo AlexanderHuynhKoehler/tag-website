@@ -1385,30 +1385,4 @@ footer h4 {
     });
   </script>
 </body>
-</html>(entry => {
-            if (entry.isIntersecting) {
-              animateStats();
-              observer.unobserve(entry.target);
-            }
-          });
-        });
-
-        const statsModule = document.querySelector('.stats-module');
-        if (statsModule) {
-          observer.observe(statsModule);
-        }
-      }
-
-      // Smooth Scroll Enhancement
-      function initializeSmoothEffects() {
-        // Add smooth scroll behavior
-        document.documentElement.style.scrollBehavior = 'smooth';
-        
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach
+</html>
