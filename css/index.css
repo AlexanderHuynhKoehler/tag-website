@@ -637,3 +637,150 @@
             border-color: #dc3545;
             box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.15);
         }
+
+          /* Add these styles to your existing index.css file */
+          
+          /* Founder Section Responsive Fixes */
+          .founder-section .row {
+              align-items: center;
+          }
+          
+          /* Ensure image column never overlaps text */
+          .founder-section .col-md-4 {
+              flex: 0 0 auto;
+              max-width: 300px;
+          }
+          
+          /* Add image container to control sizing */
+          .founder-image {
+              border-radius: 50%;
+              width: 100%;
+              max-width: 280px;
+              height: auto;
+              box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+              border: 6px solid rgba(255,255,255,0.9);
+              transition: all 0.3s ease;
+              display: block;
+              margin: 0 auto;
+          }
+          
+          /* Specific breakpoints for Mac screens */
+          @media (min-width: 1280px) and (max-width: 1440px) {
+              /* Common Mac screen sizes */
+              .founder-section .col-md-4 {
+                  max-width: 250px;
+                  padding-right: 2rem;
+              }
+              
+              .founder-image {
+                  max-width: 220px;
+              }
+              
+              .founder-section h4 {
+                  font-size: 1.8rem !important;
+              }
+              
+              .founder-section p {
+                  font-size: 1rem !important;
+              }
+          }
+          
+          /* MacBook Air and smaller Mac screens */
+          @media (min-width: 1366px) and (max-width: 1440px) {
+              .founder-section {
+                  padding: 3rem;
+              }
+          }
+          
+          /* Medium screens (tablets and smaller laptops) */
+          @media (min-width: 768px) and (max-width: 1279px) {
+              .founder-section .col-md-4 {
+                  max-width: 240px;
+                  padding-right: 1.5rem;
+              }
+              
+              .founder-image {
+                  max-width: 200px;
+              }
+              
+              .founder-section {
+                  padding: 3rem;
+              }
+              
+              .founder-section h4 {
+                  font-size: 1.75rem !important;
+              }
+              
+              .founder-section p {
+                  font-size: 1rem !important;
+                  line-height: 1.6 !important;
+              }
+          }
+          
+          /* Small tablets */
+          @media (min-width: 576px) and (max-width: 767px) {
+              .founder-section .row {
+                  flex-direction: column;
+                  text-align: center;
+              }
+              
+              .founder-section .col-md-4,
+              .founder-section .col-md-8 {
+                  max-width: 100%;
+                  padding: 0;
+              }
+              
+              .founder-image {
+                  max-width: 200px;
+                  margin-bottom: 2rem;
+              }
+          }
+          
+          /* Mobile screens */
+          @media (max-width: 575px) {
+              .founder-section {
+                  padding: 2rem 1.5rem;
+              }
+              
+              .founder-section .row {
+                  flex-direction: column;
+                  text-align: center;
+              }
+              
+              .founder-image {
+                  max-width: 180px;
+                  margin-bottom: 2rem;
+              }
+              
+              .founder-section h4 {
+                  font-size: 1.5rem !important;
+                  text-align: center;
+              }
+              
+              .founder-section p {
+                  font-size: 0.95rem !important;
+                  text-align: left;
+              }
+          }
+          
+          /* Ensure text column has proper spacing */
+          .founder-section .col-md-8 {
+              padding-left: 2rem;
+          }
+          
+          @media (max-width: 767px) {
+              .founder-section .col-md-8 {
+                  padding-left: 0;
+              }
+          }
+          
+          /* Additional safety for ultra-wide screens */
+          @media (min-width: 1920px) {
+              .founder-section .container {
+                  max-width: 1400px;
+              }
+              
+              .founder-section .col-md-4 {
+                  max-width: 320px;
+              }
+          }
