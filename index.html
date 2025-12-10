@@ -178,13 +178,97 @@
                     </div>
                 </div>
             </div>
-        <div class="text-center" style="margin-top: 3rem; margin-bottom: 2rem;">
-            <p style="font-size: 1.1rem; color: var(--primary); font-weight: 500; margin-bottom: 0;">
-                Explore our approach with a sample workshop: 
-                <a href="assets/scarf-model.pdf" target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: 600;">
-                    Download our SCARF Model Workshop Materials
-                </a>
-            </p>
+        <!-- Sample Workshops Carousel Section -->
+        <div class="workshops-showcase">
+            <h3 class="workshops-title">Explore Our Approach</h3>
+            <p class="workshops-subtitle">Click through sample workshop materials to see our methodology in action</p>
+            
+            <div class="workshop-tabs">
+                <button class="workshop-tab active" data-workshop="succession">Succession Planning</button>
+                <button class="workshop-tab" data-workshop="scarf">SCARF Model</button>
+            </div>
+            
+            <!-- Succession Planning Carousel -->
+            <div class="slide-carousel" id="succession-carousel">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="changeSlide('succession', -1)">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    
+                    <div class="carousel-slide-wrapper">
+                        <img src="assets/workshops/succession/slide-1.jpg" alt="Succession Planning Slide" class="carousel-slide" id="succession-slide-img">
+                    </div>
+                    
+                    <button class="carousel-btn next" onclick="changeSlide('succession', 1)">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-controls">
+                    <div class="slide-counter">
+                        <span id="succession-current">1</span> / <span id="succession-total">8</span>
+                    </div>
+                    <div class="slide-dots" id="succession-dots">
+                        <span class="dot active" onclick="goToSlide('succession', 1)"></span>
+                        <span class="dot" onclick="goToSlide('succession', 2)"></span>
+                        <span class="dot" onclick="goToSlide('succession', 3)"></span>
+                        <span class="dot" onclick="goToSlide('succession', 4)"></span>
+                        <span class="dot" onclick="goToSlide('succession', 5)"></span>
+                        <span class="dot" onclick="goToSlide('succession', 6)"></span>
+                        <span class="dot" onclick="goToSlide('succession', 7)"></span>
+                        <span class="dot" onclick="goToSlide('succession', 8)"></span>
+                    </div>
+                </div>
+                
+                <div class="carousel-download">
+                    <a href="assets/workshops/succession/Succession_Planning.pptx" download class="download-link">
+                        <i class="bi bi-download"></i> Download Full Presentation
+                    </a>
+                </div>
+            </div>
+            
+            <!-- SCARF Model Carousel -->
+            <div class="slide-carousel" id="scarf-carousel" style="display: none;">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="changeSlide('scarf', -1)">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    
+                    <div class="carousel-slide-wrapper">
+                        <img src="assets/workshops/scarf/slide-1.jpg" alt="SCARF Model Slide" class="carousel-slide" id="scarf-slide-img">
+                    </div>
+                    
+                    <button class="carousel-btn next" onclick="changeSlide('scarf', 1)">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-controls">
+                    <div class="slide-counter">
+                        <span id="scarf-current">1</span> / <span id="scarf-total">12</span>
+                    </div>
+                    <div class="slide-dots" id="scarf-dots">
+                        <span class="dot active" onclick="goToSlide('scarf', 1)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 2)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 3)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 4)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 5)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 6)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 7)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 8)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 9)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 10)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 11)"></span>
+                        <span class="dot" onclick="goToSlide('scarf', 12)"></span>
+                    </div>
+                </div>
+                
+                <div class="carousel-download">
+                    <a href="assets/workshops/scarf/SCARF_Model.pptx" download class="download-link">
+                        <i class="bi bi-download"></i> Download Full Presentation
+                    </a>
+                </div>
+            </div>
         </div>
             <div class="btn-group-section">
                 <a class="btn btn-primary btn-xl" href="#contact">Contact</a>
@@ -270,8 +354,7 @@
                     <h4>Connect</h4>
                     <div class="footer-divider"></div>
                     <p class="footer-text"><i class="bi bi-geo-alt-fill me-2" style="color: rgba(255,255,255,0.8);"></i>Boston Area, MA</p>
-                    <p class="footer-text"><i class="bi bi-envelope-fill me-2" style="color: rgba(255,255,255,0.8);"></i>Jeni@TalentAccelerationGroup.com</p>
-                    <p class="footer-text"><i class="bi bi-telephone-fill me-2" style="color: rgba(255,255,255,0.8);"></i>+1 (617)-596-1405</p>
+                    <p class="footer-text"><i class="bi bi-envelope-fill me-2" style="color: rgba(255,255,255,0.8);"></i><a href="mailto:jeni@talentaccelerationgroup.com" style="color: white; text-decoration: none;">jeni@talentaccelerationgroup.com</a></p>                    <p class="footer-text"><i class="bi bi-telephone-fill me-2" style="color: rgba(255,255,255,0.8);"></i>+1 (617)-596-1405</p>
                     <div class="mt-4">
                         <img src="assets/img/TAGLOGO.jpg" alt="Talent Acceleration Group Logo" class="img-fluid footer-logo">
                     </div>
@@ -297,7 +380,6 @@
     </footer>
 
     <!-- Bootstrap core JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contactForm');
@@ -405,7 +487,74 @@
                 });
             });
         });
-    </script>
+        </script>
+        
+        <!-- Carousel JavaScript -->
+        <script>
+        // Carousel state for both workshops
+        const carouselState = {
+            succession: { current: 1, total: 8, path: 'assets/workshops/succession' },
+            scarf: { current: 1, total: 12, path: 'assets/workshops/scarf' }
+        };
 
+        // Change slide function
+        function changeSlide(workshop, direction) {
+            const state = carouselState[workshop];
+            let newSlide = state.current + direction;
+            
+            if (newSlide > state.total) newSlide = 1;
+            if (newSlide < 1) newSlide = state.total;
+            
+            goToSlide(workshop, newSlide);
+        }
+
+        // Go to specific slide
+        function goToSlide(workshop, slideNum) {
+            const state = carouselState[workshop];
+            state.current = slideNum;
+            
+            const img = document.getElementById(`${workshop}-slide-img`);
+            if (img) {
+                img.style.opacity = '0';
+                setTimeout(() => {
+                    img.src = `${state.path}/slide-${slideNum}.jpg`;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            
+            document.getElementById(`${workshop}-current`).textContent = slideNum;
+            
+            const dots = document.querySelectorAll(`#${workshop}-dots .dot`);
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === slideNum - 1);
+            });
+        }
+
+        // Tab switching
+        document.querySelectorAll('.workshop-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const workshop = this.dataset.workshop;
+                
+                document.querySelectorAll('.workshop-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.slide-carousel').forEach(c => c.style.display = 'none');
+                document.getElementById(`${workshop}-carousel`).style.display = 'block';
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const activeCarousel = document.querySelector('.slide-carousel[style*="display: block"]') || 
+                                   document.getElementById('succession-carousel');
+            const workshop = activeCarousel.id.replace('-carousel', '');
+            
+            if (e.key === 'ArrowLeft') changeSlide(workshop, -1);
+            if (e.key === 'ArrowRight') changeSlide(workshop, 1);
+        });
+        </script>
+        
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

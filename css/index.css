@@ -1,4 +1,4 @@
-     :root {
+:root {
           --primary: #10471dd8;
           --primary-dark: #0a3416;
           --primary-light: #2d5f3a;
@@ -784,3 +784,216 @@
                   max-width: 320px;
               }
           }
+
+/* ================================================
+   WORKSHOP CAROUSEL STYLES
+   ================================================ */
+
+.workshops-showcase {
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 71, 29, 0.1);
+}
+
+.workshops-title {
+    text-align: center;
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.workshops-subtitle {
+    text-align: center;
+    color: var(--light-text);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.workshop-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.workshop-tab {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.workshop-tab:hover {
+    background: rgba(16, 71, 29, 0.1);
+}
+
+.workshop-tab.active {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.slide-carousel {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.carousel-slide-wrapper {
+    flex: 1;
+    max-width: 800px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    background: var(--white);
+}
+
+.carousel-slide {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.carousel-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.slide-counter {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+.slide-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: var(--primary-light);
+}
+
+.dot.active {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
+.carousel-download {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.download-link:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .workshops-showcase {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .workshops-title {
+        font-size: 1.5rem;
+    }
+    
+    .workshop-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .workshop-tab {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .slide-dots {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .download-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
