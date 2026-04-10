@@ -314,8 +314,8 @@
         /* Services Section */
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 3rem;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
           margin-top: 3rem;
         }
 
@@ -337,9 +337,8 @@
         }
 
         .service-card .card-body {
-          padding: 3rem;
+          padding: 2rem;
         }
-
         .feature-icon {
           width: 100px;
           height: 100px;
@@ -391,7 +390,7 @@
           margin-right: 0.8rem;
           font-size: 1rem;
         }
-
+        .service-card:nth-child(4) { transition-delay: 0.7s; }
         /* Contact Section */
         .contact-card {
           background: rgba(255, 255, 255, 0.95);
